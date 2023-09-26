@@ -7,7 +7,7 @@ def pascal_triangle(n):
 	elist=[]
 	
 	if n <= 0:
-		return elist
+		return []
 	else:
 		for i in range(n):
 			temp_list = []
