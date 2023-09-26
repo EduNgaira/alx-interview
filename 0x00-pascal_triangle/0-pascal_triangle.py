@@ -18,9 +18,5 @@ def pascal_triangle(n):
 					temp_list.append(elist[i-1][j-1] + elist[i-1][j])
 			elist.append(temp_list)
 
-		for i in range(n):
-			for j in range(n-i-1):
-				print(format(" ", "<2"), end="")
-			for j in range(i+1):
-				print(format(elist[i][j], "<3"), end = " ")
-			print()
+		for x in elist:
+			print(x)
