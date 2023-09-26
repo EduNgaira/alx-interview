@@ -26,4 +26,5 @@ def pascal_triangle(n):
 			print()
 
 if __name__ == "__main__":
-	pascal_triangle(5)
+	n = int(input("Enter a number: "))
+	pascal_triangle(n)
