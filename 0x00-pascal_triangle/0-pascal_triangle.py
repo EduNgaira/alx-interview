@@ -19,4 +19,4 @@ def pascal_triangle(n):
 			elist.append(temp_list)
 
 		for x in elist:
-			print("[{}]".format(",".join([str(x) for x in row])))
+			print(x)
