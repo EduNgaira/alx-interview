@@ -24,7 +24,3 @@ def pascal_triangle(n):
 			for j in range(i+1):
 				print(format(elist[i][j], "<3"), end = " ")
 			print()
-
-if __name__ == "__main__":
-	n = int(input("Enter a number: "))
-	pascal_triangle(n)
