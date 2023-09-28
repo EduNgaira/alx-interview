@@ -1,22 +1,23 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""
+Pascal's Triangle
+"""
 
-"""a function to create pascal's triangle"""
 
 def pascal_triangle(n):
-
-	elist=[]
-	
-	if n <= 0:
-		return []
-	else:
-		for i in range(n):
-			temp_list = []
-			for j in range(i+1):
-				if j==0 or j==i:
-					temp_list.append(1)
-				else:
-					temp_list.append(elist[i-1][j-1] + elist[i-1][j])
-			elist.append(temp_list)
-
-		for x in elist:
-			print(x)
+    """
+         returns a list of lists of
+         integers representing
+          the Pascal’s triangle of n
+         Returns an empty list if n <= 0
+    """
+    if n <= 0:
+        return []
+    triangle = [[1]]
+    for i in range(1, n):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        row.append(1)
+        triangle.append(row)
+    return triangle
