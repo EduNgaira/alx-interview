@@ -22,7 +22,7 @@ def minOperations(n):
     for i in range(2, n + 1):
         while n % i == 0:
             min_operations += i
-            n /= i
+            n //= i
 
     return min_operations
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     start_time = time()
 
-    for i in range(10):
+    for _ in range(10):
         n = randint(2, 100)
         print("Min # of operations to reach {} char: {}".
               format(n, minOperations(n)))
