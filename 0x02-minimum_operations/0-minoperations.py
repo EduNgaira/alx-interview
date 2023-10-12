@@ -8,34 +8,21 @@
         copy
         paste
 '''
-
-
 def minOperations(n):
-    '''
-    returns the minimum operations to get n H's
-    '''
-    min_operations = 0
+   if n < 2:
+        return 0
 
-    if n <= 1:
-        return min_operations
+    min_operations = float('inf')  # Initialize with infinity
 
     for i in range(2, n + 1):
-        while n % i == 0:
-            min_operations += i
-            n //= i
+        if n % i == 0:
+            operations = minOperations(i) + (n // i)
+            min_operations = min(min_operations, operations)
 
     return min_operations
 
-
 if __name__ == '__main__':
-    from random import randint
-    from time import time
+    # Test the function with some sample values
+    print(minOperations(3))  # Expected output: 3 (Copy All, Paste, Paste)
+    print(minOperations(8))  # Expected output: 6 (Copy All, Paste, Paste, Paste, Paste, Paste)
 
-    start_time = time()
-
-    for _ in range(10):
-        n = randint(2, 100)
-        print("Min # of operations to reach {} char: {}".
-              format(n, minOperations(n)))
-
-    print(f'==> Program completed in {time() - start_time:.3f}s')
